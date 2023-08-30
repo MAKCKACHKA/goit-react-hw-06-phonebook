@@ -1,13 +1,25 @@
 import { Form, Button, Group, Label, Input } from './Styles';
 import { useDispatch, useSelector } from 'react-redux';
 import { changeName, changeNumber } from 'redux/contacts/createContact';
+import { nanoid } from 'nanoid';
+import { addContact } from 'redux/contacts/contactsSlice';
 
-const ContactForm = ({ contacts, createContact }) => {
+const ContactForm = () => {
+  const { contacts } = useSelector(state => state.contacts);
+
   const { name, number } = useSelector(state => state.contactInfo);
-
   const dispatch = useDispatch();
   const nam = value => dispatch(changeName(value));
   const num = value => dispatch(changeNumber(value));
+
+  const createContact = data => {
+    const newContact = {
+      id: nanoid(),
+      ...data,
+    };
+    console.log(newContact);
+    dispatch(addContact(newContact));
+  };
 
   const handleChange = ({ target }) => {
     if (target.name === 'name') {

@@ -111,7 +111,6 @@ export const Button = styled.button`
 
   &:active {
     box-shadow: none;
-    transform: translateY(0);
   }
 `;
 
