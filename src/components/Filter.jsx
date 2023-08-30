@@ -1,4 +1,3 @@
-// import { Component } from 'react';
 import { FilterLabel, FilterInput } from './Styles';
 
 export const Filter = ({ filter, handleFilterChange }) => {

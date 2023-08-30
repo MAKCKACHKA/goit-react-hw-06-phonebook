@@ -107,7 +107,6 @@ export const Button = styled.button`
     color: #fff;
     background-color: #1a1a1a;
     box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
-    transform: translateY(-2px);
   }
 
   &:active {
@@ -159,5 +158,10 @@ export const DelButton = styled(Button)`
   padding: 2px 6px;
   position: absolute;
   right: 0;
-  top: 2px;
+  top: 50%;
+  transform: translateY(-48%);
+`;
+export const Text = styled.p`
+  max-width: 400px;
+  word-wrap: break-word;
 `;
